@@ -24,7 +24,7 @@ class Program
             }
         }
         int sum = 0;
-        foreach (number in numbers)
+        foreach (int number in numbers)
         {
             sum += number;
         }
