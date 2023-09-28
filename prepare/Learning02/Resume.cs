@@ -1,15 +1,19 @@
 using System;
-
+// This is just a structure
 public class Resume
 {
+    // Properties
     public string Name;
-
-    public List<Job> Jobs = new List<Job>();
-
-    public void Display()
+    public List<Job> Jobs = new List<Job>(); // this is a 'type' tells us what will be in the list
+    
+    // Constructor
+    public Resume()
+    {
+    }
+    public void DisplayResume()
     {
         Console.WriteLine($"Name: {Name}");
-        Console.WriteLine("Jobs:");
+        Console.WriteLine($"Jobs:");
 
         foreach (Job job in Jobs)
         {
