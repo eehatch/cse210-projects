@@ -28,7 +28,7 @@ public class Resume
 
 
 // public class Student{
-   // public string FirstName { get; set; }   
+   // public string FirstName { get; set; }   {get set} is the same as FirstName () for right now
    // public string LastName { get; set; }   
 //    public string INumber { get; set; }
 
