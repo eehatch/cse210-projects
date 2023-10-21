@@ -6,23 +6,48 @@ public class Reference{
     private string _chapter; 
     private string _verse; 
     private string _lastVerse;
-    private string _verseText;
 
-    public Reference(string book, string chapter, string verse, string lastVerse, string verseText)
+    public Reference(string book, string chapter, string verse)
+    {
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _lastVerse = "";
+    }
+    
+    
+    public Reference(string book, string chapter, string verse, string lastVerse)
     {
         _book = book;
         _chapter = chapter;
         _verse = verse;
         _lastVerse = lastVerse;
-        _verseText = verseText;
     }
-    public string GetReference()
+
+    public string DisplayReference()
     {
-        string reference = $"{_book} {_chapter}:{_verse}-{_lastVerse}";
-        return reference;
+        if (_lastVerse.Length > 0)
+        {
+            return _book + _chapter + ":" + _verse + "-" + _lastVerse;
+        }
+        else if (_lastVerse.Length == 0)
+        {
+            return _book + _chapter + ":" + _verse;
+        }
+        else
+            return "This is not a correct verse";
     }
-    public string GetVerseText()
-    {
-        return _verseText;
-    }
+    // public void DisplayReference()
+    // {
+    //     if (_lastVerse.Length >= 0)
+    //     {
+    //         Console.WriteLine($"{_book} {_chapter}:{_verse}-{_lastVerse}");
+    //     }
+    //     else if (_lastVerse.Length == 0)
+    //     {
+    //         Console.WriteLine($"{_book} {_chapter}:{_verse}");
+    //     }
+    //     else
+    //         Console.Write("This is not a correct verse");
+    // }
 }

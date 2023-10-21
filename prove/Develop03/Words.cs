@@ -3,11 +3,10 @@ public class Words{
     private string _words;
     public Words (string words)
     {
-        _words = words[0,  ];
+        _words = words;
     }
     public string GetWords()
     {
-
         return _words;
     }
     public string HideWords {get; set;}
