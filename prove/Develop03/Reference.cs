@@ -37,17 +37,4 @@ public class Reference{
         else
             return "This is not a correct verse";
     }
-    // public void DisplayReference()
-    // {
-    //     if (_lastVerse.Length >= 0)
-    //     {
-    //         Console.WriteLine($"{_book} {_chapter}:{_verse}-{_lastVerse}");
-    //     }
-    //     else if (_lastVerse.Length == 0)
-    //     {
-    //         Console.WriteLine($"{_book} {_chapter}:{_verse}");
-    //     }
-    //     else
-    //         Console.Write("This is not a correct verse");
-    // }
 }

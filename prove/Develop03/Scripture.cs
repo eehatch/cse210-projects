@@ -1,14 +1,32 @@
 using System.Security.Authentication.ExtendedProtection;
 
 public class Scripture{
-    private string _scriptureText;
+    private Reference _reference;
+    private List<string> _words;
 
-    public Scripture(string text)
+    public Scripture()
     {
-        _scriptureText = text;
+        _words = new List<string>();
+
+        string scriptureText1 = "Adam fell that men might be; and men are, that they might have joy.";
+        string[] splitwords = scriptureText1.Split(' ');
+        
+        foreach (string word in splitwords)
+        {
+            _words.Add(new string(word));
+        }
     }
-    public string GetScripture()
+    public void GetWords()
     {
-        return _scriptureText;
+        
     }
+    public void GetScripture()
+    {
+    }
+
+    public void HideWord()
+    {
+        
+    }
+
 }
