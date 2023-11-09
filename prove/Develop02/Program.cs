@@ -25,6 +25,8 @@ class Program
         prompts.Add("What did you learn today?");
 
         // if user picks option to add a new entry
+        Random random = new Random();
+        string randomPrompt = prompts[random.Next(prompts.Count)];
         // 1: pick a random prompt from list above
         Console.WriteLine("Welcome to the Journal Program!");
         Console.WriteLine("Please Select one of the following choices: ");
@@ -40,7 +42,12 @@ class Program
         {
             Console.WriteLine(prompts);
             Console.Write("> ");
-            Entry Response = new Entry();
+            Entry Response = new Entry{
+                Prompt = randomPrompt,
+                Response = choice,
+                EntryDate = DateTime.Now
+
+            };
         }
         
         // 3. save entry from user
@@ -54,15 +61,17 @@ class Program
             Console.Write("What is the filename? ");
             string FileName = Console.ReadLine();
         // 5.
-        Entry entry = new Entry();
-        entry.EntryDate = DateTime.Now.ToShortDateString();
-        entry.Prompt = $"{prompts}"; // from prompt above;
-        entry.Response = $"{Response}"; // pull from user's response
+        Entry Response = new Entry{
+                Prompt = randomPrompt,
+                Response = choice,
+                EntryDate = DateTime.Now
+
+            };
 
         // 6. Create a Journal
         Journal journal = new Journal();
         journal.JournalName ="Emily Hatch"; // ask user for their name
-        journal.Entries.Add(entry);
+        journal.Entries.Add(Response);
 
         List<string> Entries = new List<string>();
         foreach (Entry entries in Entries)
