@@ -6,9 +6,9 @@ class Program
     static void Main(string[] args)
     {
         List<Goal> goals = new List<Goal>();
-
         string menu = "";
-        int PointAmount = Goal.CreateGoal();
+
+        // int PointAmount = Goal.CreateGoal();
 
         while (menu != "6") {
             Console.WriteLine($"You have {PointAmount} points.");
@@ -30,21 +30,18 @@ class Program
                 Console.WriteLine("3. Checklist Goals");
                 Console.Write("What type of goal would you like to create? ");
                 string goaltype = Console.ReadLine();
+
                 if (goaltype == "1"){
-                    SimpleGoal simpleGoal = new SimpleGoal();
-                    break;
+                    SimpleGoal simpleGoal = new SimpleGoal("","","","" );
                 }
-                if (goaltype == "2"){
-                    EternalGoal eternalGoal = new EternalGoal(); 
-                    break;
+                else if (goaltype == "2"){
+                    EternalGoal eternalGoal = new EternalGoal("","",""); 
                 }
-                if (goaltype == "3"){
-                    ChecklistGoal checklistgoal  = new ChecklistGoal("","", "","" ,"" );
-                    break;
+                else if (goaltype == "3"){
+                    ChecklistGoal checklistgoal  = new ChecklistGoal("","","","" ,"" );
                 }
                 else{
                     Console.WriteLine("Invalid goal type. Please try agian");
-                    break;
                 }
             }
         }
