@@ -13,6 +13,10 @@ public abstract class Goal
         _pointAmount = PointAmount;
         _isCompletable = IsCompletable;
     }
+    public int GetPointAmount()
+    {
+        return _pointAmount;
+    }
     public void CreateGoal()
     {
         Console.Write("What is the name of your goal? ");

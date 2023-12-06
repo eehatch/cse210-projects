@@ -7,8 +7,8 @@ public class Running : Activity
         _distance = Distance;
     }
 
-    public override int GetPace()
+    public override double GetPace()
     {
-        return _distance / Time * 60;
+        return _distance / GetLength() * 60;
     }
 }

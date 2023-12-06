@@ -1,7 +1,7 @@
 public abstract class Activity
 {
- private string _date;
- private int _length;
+   private string _date;
+   private int _length;
 
  public Activity(string Date, int Length)
  {
@@ -9,9 +9,17 @@ public abstract class Activity
     _length = Length;
  }
 
+   public string GetDate()
+ {
+   return _date;
+ }
+ public int GetLength()
+ {
+   return _length;
+ }
  public virtual void GetSummary()
  {
     Console.WriteLine($"{_date} @ {_length}");
  }
- public abstract int GetPace();
+ public abstract double GetPace();
 }

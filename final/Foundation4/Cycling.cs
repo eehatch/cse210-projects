@@ -6,4 +6,9 @@ public class Cycling : Activity
     {
         _speed = Speed;
     }
+
+    public override double GetPace()
+    {
+        return 60 / _speed;
+    }
 }

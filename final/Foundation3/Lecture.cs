@@ -19,6 +19,7 @@ public class Lecture : Event
     }
     public override string GetFullDetails()
     {
-        // throw new NotImplementedException();
+        return $"{GetStandardDetails()} \n The Speaker will be {_speakerName}!";
+
     }
 }

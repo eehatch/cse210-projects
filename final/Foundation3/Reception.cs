@@ -12,6 +12,6 @@ public class Reception : Event
     }
     public override string GetFullDetails()
     {
-        throw new NotImplementedException();
+        return $"{GetStandardDetails()} \n Please RSVP at {_email}!";
     }
 }

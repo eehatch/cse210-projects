@@ -12,6 +12,6 @@ public class OutdoorGathering : Event
     }
     public override string GetFullDetails()
     {
-        return $"{title}: {Description} on {_date} @ {Time} - {Address} \n Be awrare that the weather will be {_weather}!";
+        return $"{GetStandardDetails()} \n Be awrare that the weather will be {_weather}!";
     }
 }

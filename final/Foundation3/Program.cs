@@ -13,10 +13,17 @@ class Program
         events.Add(reception1);
 
         OutdoorGathering outdoorGathering1 = new OutdoorGathering("Cloudy with some rain", "TITLE GOES HERE", "VERY VAGUE DESCRIPTION", "December 25th, 2023", "6:00 pm", "Address goes here");
-        // fix date here pls
         events.Add(outdoorGathering1);
 
-
+        Console.WriteLine($"{outdoorGathering1.GetStandardDetails}");
+        Console.WriteLine($"{outdoorGathering1.GetShortDescription}");
+        Console.WriteLine($"{outdoorGathering1.GetFullDetails}\n");
+        Console.WriteLine($"{lecture1.GetStandardDetails}");
+        Console.WriteLine($"{lecture1.GetShortDescription}");
+        Console.WriteLine($"{lecture1.GetFullDetails}\n");
+        Console.WriteLine($"{reception1.GetStandardDetails}");
+        Console.WriteLine($"{reception1.GetShortDescription}");
+        Console.WriteLine($"{reception1.GetFullDetails}\n");
 
     }
 }

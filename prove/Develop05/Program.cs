@@ -11,7 +11,7 @@ class Program
         // int PointAmount = Goal.CreateGoal();
 
         while (menu != "6") {
-            Console.WriteLine($"You have {PointAmount} points.");
+            Console.WriteLine($"You have {GetPointAmount()} points.");
             Console.WriteLine("");
             Console.WriteLine("Menu Options:");
             Console.WriteLine("1. Create New Goal");
@@ -32,7 +32,12 @@ class Program
                 string goaltype = Console.ReadLine();
 
                 if (goaltype == "1"){
-                    SimpleGoal simpleGoal = new SimpleGoal("","","","" );
+                    Console.Write("Enter your simple goal name: ");
+                    name = Console.ReadLine();
+                    SimpleGoal simpleGoal = new SimpleGoal(name,
+                    "",
+                    "",
+                    "" );
                 }
                 else if (goaltype == "2"){
                     EternalGoal eternalGoal = new EternalGoal("","",""); 

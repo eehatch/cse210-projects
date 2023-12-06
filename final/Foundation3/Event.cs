@@ -35,13 +35,13 @@ public abstract class Event
     {
         return _address;
     }
-    public virtual void GetStandartDetails()
+    public virtual string GetStandardDetails()
     {
-        Console.WriteLine($"{_title}: {_description} on {_date} @ {_time} - {_address}");
+        return $"{_title}: {_description} on {_date} @ {_time} - {_address}";
     }
-    public virtual void GetShortDescription()
+    public virtual string GetShortDescription()
     {
-        Console.WriteLine($"EVENT TYPE GOES HERE   {_title}: {_description}");
+        return $"EVENT TYPE GOES HERE  {_title}: {_description}";
     }
     public abstract string GetFullDetails();
 }
