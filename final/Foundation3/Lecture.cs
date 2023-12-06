@@ -19,7 +19,7 @@ public class Lecture : Event
     }
     public override string GetFullDetails()
     {
-        return $"{GetStandardDetails()} \n The Speaker will be {_speakerName}!";
+        return $"{GetStandardDetails()} \nThe Speaker will be {_speakerName}!";
 
     }
 }

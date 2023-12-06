@@ -12,6 +12,6 @@ public class Reception : Event
     }
     public override string GetFullDetails()
     {
-        return $"{GetStandardDetails()} \n Please RSVP at {_email}!";
+        return $"{GetStandardDetails()} \nPlease RSVP at {_email}!";
     }
 }

@@ -17,9 +17,9 @@ public abstract class Activity
  {
    return _length;
  }
- public virtual void GetSummary()
+ public virtual string GetSummary()
  {
-    Console.WriteLine($"{_date} @ {_length}");
+    return $"{_date} @ {_length}";
  }
  public abstract double GetPace();
 }

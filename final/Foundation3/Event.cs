@@ -37,11 +37,11 @@ public abstract class Event
     }
     public virtual string GetStandardDetails()
     {
-        return $"{_title}: {_description} on {_date} @ {_time} - {_address}";
+        return $"\n{_title}: {_description} This event takes place on {_date} @ {_time} - {_address}";
     }
     public virtual string GetShortDescription()
     {
-        return $"EVENT TYPE GOES HERE  {_title}: {_description}";
+        return $"\n{this.GetType()}: {_title}! {_description}";
     }
     public abstract string GetFullDetails();
 }
