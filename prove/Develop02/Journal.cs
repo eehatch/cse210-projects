@@ -1,11 +1,9 @@
 public class Journal {
-    public string JournalName {get; set;}
-
-    public List<Entry> Entries {get; set;}
+    public string JournalName;
+    public List<Entry> _journal = new List<Entry>();
 
     public Journal()
     {
-        Entries = new List<Entry>();
     }
 
 }

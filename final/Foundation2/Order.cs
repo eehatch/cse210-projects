@@ -2,11 +2,12 @@ public class Order
 {
     private List<Product> _products;
     private Customer _customer;
-    public Order(List<Product> products , Customer customer)
+    private Address _address;
+    public Order(List<Product> products , Customer customer, Address address)
     {
         _customer = customer;
         _products = products;
-
+        _address = address;
     }
     public double TotalPrice()
     {
@@ -21,14 +22,14 @@ public class Order
         string label = "";
         foreach (Product product in _products)
         {
-            label += $"{product.GetName()}: {product.GetProductID()}";
+            label += $"{product.GetName()}: {product.GetProductID()}\n";
         }
         return label;
     
     }
     public string ShippingLabel()
     {
-        return $"{_customer.GetName()}\n{_customer.Address()}";
+        return $"{_customer.GetName()}\n{_address.ListAddress()}";
         
     }
 }

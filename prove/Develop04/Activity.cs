@@ -48,7 +48,7 @@ public class Activity
             }
         }
     }
-    public static void ShowCountDonw(int Duration)
+    public static void ShowCountDown(int Duration)
     {        
         for (int i = 5; i >0; i--)
         {

@@ -15,15 +15,15 @@ class Program
         Product product3 = new Product("Laptop", "L145", 1, 500);
         Product product4 = new Product("Blanket", "B45", 1, 50);
 
-        Order order1 = new Order(new List<Product> {product1, product4 }, customer1);
-        Order order2 = new Order(new List<Product> {product2, product3 }, customer1);
+        Order order1 = new Order(new List<Product> {product1, product4 }, customer1, addressNot);
+        Order order2 = new Order(new List<Product> {product2, product3 }, customer2, addressUsa);
 
-        Console.WriteLine($"Order 1 Packing Label \n {order1.PackingLabel()}");
-        Console.WriteLine($"Order 1 Shipping Label \n {order1.ShippingLabel()}");
-        Console.WriteLine($"Order 1 Total Price: {order1.TotalPrice()}");
+        Console.WriteLine($"\n------Order 1 Packing Label------ \n{order1.PackingLabel()}");
+        Console.WriteLine($"------Shipping Label------ \n{order1.ShippingLabel()}");
+        Console.WriteLine($"Order 1 Total Price: {order1.TotalPrice()}\n");
 
-        Console.WriteLine($"Order 2 Packing Label \n {order2.PackingLabel()}");
-        Console.WriteLine($"Order 2 Shipping Label \n {order2.ShippingLabel()}");
+        Console.WriteLine($"------Order 2 Packing Label------ \n{order2.PackingLabel()}");
+        Console.WriteLine($"------Shipping Label------\n{order2.ShippingLabel()}");
         Console.WriteLine($"Order 2 Total Price: {order2.TotalPrice()}");
     
     }

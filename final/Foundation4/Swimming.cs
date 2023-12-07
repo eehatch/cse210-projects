@@ -1,13 +1,22 @@
+using System.Reflection.Metadata.Ecma335;
+
 public class Swimming : Activity
 {
-    private double _numberLabs;
-    public Swimming(int NumberLabs, string Date, int Length) : base(Date, Length)
+    private double _numberLaps;
+    public Swimming(double NumberLaps, string Date, double Length) : base(Date, Length)
     {
-        _numberLabs = NumberLabs;
+        _numberLaps = NumberLaps;
     }
-
+    public override double GetDistance()
+    {
+        return _numberLaps * 50 / 1000 * 0.62;
+    }
+    public override double GetSpeed()
+    {
+        return  GetDistance() / GetLength() * 60;
+    }
     public override double GetPace()
     {
-        return _numberLabs * 50 / 1000 * 0.62;
+        return 60 / GetSpeed();
     }
 }

@@ -5,6 +5,6 @@ public class EternalGoal : Goal
     public override bool RecordEvent()
     {
         _isCompletable = false;
-        return false;
+        return _isCompletable;
     }
 }

@@ -11,7 +11,7 @@ public class ChecklistGoal : Goal
     public override bool RecordEvent()
     {
         _isCompletable = true;
-        return true;
+        return _isCompletable;
     }
     
 }

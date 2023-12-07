@@ -14,8 +14,6 @@ public class Reference{
         _verse = verse;
         _lastVerse = "";
     }
-    
-    
     public Reference(string book, string chapter, string verse, string lastVerse)
     {
         _book = book;

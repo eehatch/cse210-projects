@@ -1,19 +1,15 @@
 using System.Diagnostics.Contracts;
 
 public class Entry {
-    public DateTime EntryDate {get; set;}
-    public string Prompt {get; set;}
-    public string Response {get; set;}
-
+    public DateTime EntryDate;
+    public string Prompt;
+    public string Response;
 
     public void DisplayEntry()
     {
         Console.WriteLine($"{EntryDate}");
-        Console.WriteLine($"{Prompt}");
+        Console.WriteLine($"Prompt: {Prompt}");
         Console.WriteLine($"{Response}");
-
-        
-
     }
 
 

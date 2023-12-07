@@ -1,9 +1,9 @@
 public abstract class Activity
 {
    private string _date;
-   private int _length;
+   private double _length;
 
- public Activity(string Date, int Length)
+ public Activity(string Date, double Length)
  {
     _date = Date;
     _length = Length;
@@ -13,13 +13,15 @@ public abstract class Activity
  {
    return _date;
  }
- public int GetLength()
+ public double GetLength()
  {
    return _length;
  }
  public virtual string GetSummary()
  {
-    return $"{_date} @ {_length}";
+    return $"{_date} {this.GetType()} ({_length} min)- Distance {Math.Round(GetDistance(),2)} miles, Speed {Math.Round(GetSpeed(),2)} mph, Pace: {Math.Round(GetPace(),2)} min per mile ";
  }
+ public abstract double GetDistance();
  public abstract double GetPace();
+ public abstract double GetSpeed();
 }

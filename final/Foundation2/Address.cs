@@ -17,8 +17,8 @@ public class Address
     {
         return _country.ToLower() == "usa";
     }
-    public void ListAddress()
+    public virtual string ListAddress()
     {
-        Console.WriteLine($"{_street} {_city}, {_state}, {_country}");
+        return $"{_street} {_city}, {_state}, {_country}";
     }
 }

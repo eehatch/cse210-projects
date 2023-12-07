@@ -13,17 +13,14 @@ class Program
         // ToDo:
         // Create a Journal object
         // prompt the user with menu
-    
-
-        List<string> prompts = new List<string>();
-
-        prompts.Add("What was the best part of my day?");
-        prompts.Add("How did I see the hand of the Lord in my life today?");
-        prompts.Add("What was on your mind today?");
-        prompts.Add("What miracles did you see today?");
-        prompts.Add("Describe your day using a song:");
-        prompts.Add("What did you learn today?");
-
+        List<string> prompts = new List<string>{
+            "What was the best part of my day?",
+            "How did I see the hand of the Lord in my life today?",
+            "What was on your mind today?",
+            "What miracles did you see today?",
+            "Describe your day using a song: ",
+            "What did you learn today?"
+        };
         // if user picks option to add a new entry
         Random random = new Random();
         string randomPrompt = prompts[random.Next(prompts.Count)];
@@ -40,20 +37,20 @@ class Program
         // 2. display random prompt
         if (choice == "1")
         {
-            Console.WriteLine(prompts);
+            Console.WriteLine(randomPrompt);
             Console.Write("> ");
-            Entry Response = new Entry{
+            string response = Console.ReadLine();
+            Entry entry = new Entry
+            {
                 Prompt = randomPrompt,
-                Response = choice,
+                Response = response,
                 EntryDate = DateTime.Now
-
             };
         }
-        
         // 3. save entry from user
         else if (choice == "2")
         {
-            Response.DisplayEntry();
+            Console.WriteLine($"{DisplayEntry()}");
         }  
         // 4. create Entry object
            
@@ -76,7 +73,7 @@ class Program
         List<string> Entries = new List<string>();
         foreach (Entry entries in Entries)
         {
-            entries.Display();
+            entries.DisplayEntry();
         }
 
         SaveToFile(entry);
