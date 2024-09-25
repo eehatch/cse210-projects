@@ -7,21 +7,27 @@ class Program
         Random randomGenerator = new Random();
         int magicNum = randomGenerator.Next(1, 40);
 
-        Console.Write("What is your guess? ");
-        int guess = int.Parse(Console.ReadLine());
+        int guess = -1;
 
-        if (guess == magicNum)
+        while (guess != magicNum)
         {
-            Console.WriteLine("You Guessed it!");
+            Console.Write("What is your guess? ");
+            guess = int.Parse(Console.ReadLine());
+
+            if (guess == magicNum)
+            {
+                Console.WriteLine("You Guessed it!");
+            }
+            else if (guess > magicNum)
+            {
+                Console.WriteLine("Lower!");
+            }
+            else if (guess < magicNum)
+            {
+                Console.WriteLine("Higher!");
+            }
         }
-        else if (guess > magicNum)
-        {
-            Console.WriteLine("Lower!");
-        }
-        else if (guess < magicNum)
-        {
-            Console.WriteLine("Higher!");
-        }
+        
      
     }
 }
