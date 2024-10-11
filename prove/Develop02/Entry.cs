@@ -7,6 +7,6 @@ public class Entry
     public string _prompt;
     public void Write()
     {
-        Console.WriteLine($"{_date}\n{_prompt}\n{_note}");
+        Console.WriteLine($"{_date}\n{_prompt}\n{_note}\n");
     }
 }

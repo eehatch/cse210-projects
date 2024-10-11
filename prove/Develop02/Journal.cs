@@ -4,27 +4,38 @@ public class Journal
 {
     public List<Entry> entries = new();
 
-    public void Save()
+    public void Save() //Done i think!
     {
         Console.WriteLine("What would you like to name your file? ");
         string filename = Console.ReadLine();
+
         using (StreamWriter outputFile = new StreamWriter(filename))
         {
-            // You can add text to the file with the WriteLine method
-            outputFile.WriteLine(entries);
-            
+            foreach (Entry entry in entries)
+            {
+                outputFile.WriteLine($"{entry._date}|{entry._prompt}|{entry._note}");
+            }
         }
     }
     public void Load()
     {
         Console.Write("What is the filename? ");
-            string filename = Console.ReadLine();
-            string[] lines = System.IO.File.ReadAllLines(filename);
-            foreach (string line in lines)
+        string filenames = Console.ReadLine();
+
+        string[] lines = System.IO.File.ReadAllLines(filenames);
+        // entries.Clear();
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split("|");
+            // the name of the different files?
+            Entry entry = new Entry
             {
-                string[] parts = line.Split("|");
-                // the name of the different files?
-            }
+                _date = parts[0],
+                _prompt = parts[1],
+                _note = parts[2]
+            };
+            entries.Add(entry);
+        }
     }
     public void Display() //done!!
     {

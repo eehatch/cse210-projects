@@ -18,16 +18,14 @@ class Program
         prompts.Add("What’s a hobby you enjoy, and why?");
         prompts.Add("How did I see the hand of the Lord in my life today?");
         Random random = new Random();
-        string randomPrompt = prompts[random.Next(prompts.Count)];
         
         Journal journal = new Journal();
         Entry entry = new();
-        entry._prompt = randomPrompt;
         entry._date = dateText;
         string choice = "0";
         
         do {
-            Console.WriteLine("Welcome to the Journal Program!");
+            Console.WriteLine("\nWelcome to the Journal Program!");
             Console.WriteLine("Please Select one of the following choices: ");
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
@@ -36,6 +34,11 @@ class Program
             Console.WriteLine("5. Quit");
             Console.Write("What would you like to do? ");
             choice = Console.ReadLine();
+
+            string randomPrompt = prompts[random.Next(prompts.Count)];
+
+            entry._prompt = randomPrompt;
+
         
             if (choice == "1") //write
             {
@@ -46,7 +49,7 @@ class Program
             }
             else if (choice == "2") //display
             {
-                journal.Display();
+                //journal.Display();
                 entry.Write();
             }
             else if (choice == "3") //load
@@ -66,7 +69,6 @@ class Program
             {
                 Console.WriteLine("\nInvalid choice. Please choose a valid option.\nJ");
             }
-
         }
         while (choice != "5");
     }
