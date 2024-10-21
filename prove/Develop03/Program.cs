@@ -4,6 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop03 World!");
+        Console.WriteLine("Scripture Memorizer!!"); Thread.Sleep(1000); //pause 1 second
+
+
+        // Word word = new("Behold");
+        // word.Display(); Console.WriteLine();
+        // word.Hide();
     }
 }
