@@ -7,20 +7,23 @@ public class Word
     public string _text;
     public bool _hidden;
 
-    public void Display()
-    {
-        //
-    }
     public void Hide()
     {
-
+        
     }
     public void IsHidden()
     {
+        if (_hidden == true)
+        {
 
+        }
     }
     public void Show()
     {
 
+    }
+    public void Display()
+    {
+        
     }
 }
