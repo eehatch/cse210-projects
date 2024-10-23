@@ -2,13 +2,28 @@ using System;
 
 public class Scripture
 {
-    public string _text;
-    public string _reference;
-    public List<Word> words = new();
+    private string _text;
+    private string _reference;
+    private List<Word> _words = new();
 
-    public void SplitScripture()
+
+    public Scripture(string Text, string Reference)
     {
+        _text = Text;
+        _reference = Reference;
+    }
+
+    public void SplitScripture(string Text)
+    {
+        _text = Text;
+        Text = "Adam fell that men might be; and men are, that they might have joy.";
+        string[] splitWords = Text.Split(' ');
         
+        foreach (string word in splitWords)
+        {
+            
+        }
+
     }
     public void HideWords()
     {
@@ -16,7 +31,8 @@ public class Scripture
     }
     public void AllHidden()
     {
-
+        // if _text == IsHidden(){}
+        Console.Clear();
     }
     public void Display()
     {

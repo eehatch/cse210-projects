@@ -3,10 +3,10 @@ using System.Reflection.Emit;
 
 public class Reference
 {
-    public string _book;
-    public int _chapter;
-    public int _firstVerse;
-    public int _lastVerse;
+    private string _book;
+    private int _chapter;
+    private int _firstVerse;
+    private int _lastVerse;
 
     public Reference(string book, int chapter, int verse)
     {
@@ -17,7 +17,6 @@ public class Reference
         // return $"{_book} {_chapter}: {_firstVerse} - {_lastVerse}";
 
     } 
-    
     public Reference(string book, int chapter, int firstVerse, int lastVerse)
     {
         _book = book;
