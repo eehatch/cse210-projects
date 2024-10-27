@@ -1,7 +1,7 @@
 using System;
 using System.Reflection.Emit;
 
-public class Reference
+public class Reference  //DONE
 {
     private string _book;
     private int _chapter;
@@ -26,15 +26,15 @@ public class Reference
         // return $"{_book} {_chapter}: {_firstVerse} - {_lastVerse}";
 
     }   
-    public void Display()
+    public string GetReference()
     {
         if (_firstVerse == _lastVerse) 
         {
-            Console.WriteLine($"{_book} {_chapter}: {_firstVerse}");
+            return $"{_book} {_chapter}: {_firstVerse}-{_lastVerse}";
         }
         else
         {
-            Console.WriteLine($"{_book} {_chapter}: {_firstVerse} - {_lastVerse}");
+            return $"{_book} {_chapter}: {_firstVerse}-{_lastVerse}";
         }
     }
 }
