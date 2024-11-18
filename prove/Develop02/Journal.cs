@@ -2,7 +2,7 @@ using System;
 
 public class Journal
 {
-    public List<Entry> entries = new();
+    public List<Entry> _entries = new();
 
     public void Save() //Done i think!
     {
@@ -11,7 +11,7 @@ public class Journal
 
         using (StreamWriter outputFile = new StreamWriter(filename))
         {
-            foreach (Entry entry in entries)
+            foreach (Entry entry in _entries)
             {
                 outputFile.WriteLine($"{entry._date}|{entry._prompt}|{entry._note}");
             }
@@ -34,12 +34,12 @@ public class Journal
                 _prompt = parts[1],
                 _note = parts[2]
             };
-            entries.Add(entry);
+            _entries.Add(entry);
         }
     }
     public void Display() //done!!
     {
-        foreach (Entry entry in entries)
+        foreach (Entry entry in _entries)
         {
             entry.Write();
         }

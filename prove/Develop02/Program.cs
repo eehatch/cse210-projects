@@ -17,9 +17,8 @@ class Program
         prompts.Add("Describe your ideal day.");
         prompts.Add("What’s a hobby you enjoy, and why?");
         prompts.Add("How did I see the hand of the Lord in my life today?");
-        Random random = new Random();
-        
-        Journal journal = new Journal();
+        Random random = new();
+        Journal journal = new();
         Entry entry = new();
         entry._date = dateText;
         string choice = "0";
