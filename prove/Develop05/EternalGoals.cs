@@ -14,6 +14,6 @@ public class EternalGoals : Goals
     }
     public override string CompletedGoals() //incorrect
     {
-        throw new NotImplementedException();
+        return $"{GetGoal} can be completed multiple times.";
     }
 }

@@ -4,7 +4,7 @@ public class SimpleGoals : Goals
 
     public SimpleGoals(string GoalName, string GoalDesc, int GoalPoints, int TotalScore) : base(GoalName, GoalDesc, GoalPoints, TotalScore)
     {
-        GoalPoints = 0;
+        _isComplete = false;
     }
     public override int SetPointValue()
     {
@@ -12,10 +12,11 @@ public class SimpleGoals : Goals
     }
     public override int AddPoints()
     {
-        throw new NotImplementedException(); //incorrect
+        return GetTotalPoints(); //incorrect
     }
     public override string CompletedGoals()
     {
-        throw new NotImplementedException(); //incorrect
+        _isComplete = false;
+        return ""; //incorrect
     }
 }
