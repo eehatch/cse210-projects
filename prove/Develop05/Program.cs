@@ -5,7 +5,8 @@ class Program
     {
         string choice = " ";
         List<Goals> goals = new();
-        Goals newgoal = new();
+        
+        // Goals newGoal = new();
 
         do
         {
@@ -31,29 +32,21 @@ class Program
                 choice2 = Console.ReadLine();
                 if (choice2 == "1")
                 {
-                    // How to incorporate inheritance
-                    Console.Write("What is the name of your goal? ");
-                    string name = Console.ReadLine();
-                    Console.Write("What is a short description of it? ");
-                    string description = Console.ReadLine();
-                    Console.Write("What is the amount of points associated with this goal? ");
-                    int points = Convert.ToInt32(Console.ReadLine());
-
-                    SimpleGoals simple = new SimpleGoals(name, description, points, 0);
+                    SimpleGoals simple = new("", "", 0, 0);
+                    simple.SetGoal();
                     goals.Add(simple);
                 }
                 else if (choice2 == "2")
                 {
-                    newgoal.SetGoal();
+                    EternalGoals eternal = new("", "", 0, 0);
+                    eternal.SetGoal();
+                    goals.Add(eternal);
                 }
                 else if (choice2 == "3")
                 {
-                    Console.Write("What is the name of your goal? ");
-                    Console.Write("What is a short description of it? ");
-                    Console.Write("What is the amount of points associated with this goal? ");
-
-                    //look at above, USE INHERITANCE
-
+                    ChecklistGoals checklist = new("", "", 0, 0, 0);
+                    checklist.SetGoal();
+                    goals.Add(checklist);
                 }
                 else
                 {
@@ -64,9 +57,8 @@ class Program
             {
                 foreach (Goals goal in goals)
                 {
-                    Console.WriteLine(goal.GetGoal());
-                }
-                
+                    Console.WriteLine(goal.GetGoalName());
+                }  
             }
             else if (choice == "3") //Save goal
             {

@@ -1,12 +1,12 @@
 using System.Dynamic;
 
-public abstract class Goals
+abstract public class Goals
 {
-    private string _goalName;
-    private string _goalDescription;
-    private int _goalPoints;
-    private int _totalScore;
-    //List<Goals> _goals;
+    protected string _goalName;
+    protected string _goalDescription;
+    protected int _goalPoints;
+    protected int _totalScore;
+    protected List<Goals> _goals;
 
     public Goals(string GoalName, string GoalDesc, int GoalPoints, int TotalScore)
     {
@@ -16,49 +16,15 @@ public abstract class Goals
         _totalScore = TotalScore;
     }
 
-    public string GetGoal()
+    public string GetGoalName()
     {
-        return $"{_goalName} + \n{_goalDescription}";
+        return _goalName;
     }
-    public void SetGoal()
+    public string GetGoalDesc()
     {
-        string choice2 = " ";
-                Console.WriteLine("1. Simple Goal ");
-                Console.WriteLine("2. Eternal Goal ");
-                Console.WriteLine("3. Checklist Goal ");
-                Console.WriteLine("What kind of Goal would you like to create? ");
-                choice2 = Console.ReadLine();
-                if (choice2 == "1")
-                {
-                    // How to incorporate inheritance
-                    Console.Write("What is the name of your goal? ");
-                    string name = Console.ReadLine();
-                    Console.Write("What is a short description of it? ");
-                    string description = Console.ReadLine();
-                    Console.Write("What is the amount of points associated with this goal? ");
-                    int points = Convert.ToInt32(Console.ReadLine());
-
-                    SimpleGoals simple = new SimpleGoals(name, description, points, 0);
-                    goals.Add(simple);
-                }
-                else if (choice2 == "2")
-                {
-                    newgoal.SetGoal();
-                }
-                else if (choice2 == "3")
-                {
-                    Console.Write("What is the name of your goal? ");
-                    Console.Write("What is a short description of it? ");
-                    Console.Write("What is the amount of points associated with this goal? ");
-
-                    //look at above, USE INHERITANCE
-
-                }
-                else
-                {
-                    Console.WriteLine("Invalid choice. Please select a valid option.");
-                } 
+        return _goalDescription;
     }
+    public abstract void SetGoal();
     public int GetTotalPoints()
     {
         return _totalScore;
@@ -70,18 +36,20 @@ public abstract class Goals
     {
         return $"You have {GetTotalPoints()} points!";
     }
-    public string SaveGoal()
+    public void SaveGoal()
     {
-        string Goal = $"{_goalName} + \n{_goalDescription}";
-        string filename = "myFile.txt";
-        Console.Write("What is the name of your file? ");
-        filename = Console.ReadLine();
-        string[] lines = System.IO.File.ReadAllLines(filename);
-        using (StreamWriter outputFile = new StreamWriter(filename))
+        // string Goal = $"{_goalName} + \n{_goalDescription}";
+        string goalName = "myFile.txt";
+        Console.Write("What is the name of your goal? ");
+        goalName = Console.ReadLine();
+        string[] lines = System.IO.File.ReadAllLines(goalName);
+        using (StreamWriter outputFile = new StreamWriter(goalName))
         {
-        outputFile.WriteLine($"{lines}");
+            foreach(Goals goal in _goals)
+            {
+                Console.WriteLine($"{_goals}");
+            }
         }
-        return Goal;
     }
     public string LoadGoal()
     {

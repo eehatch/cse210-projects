@@ -3,6 +3,7 @@ using System;
 public class Journal
 {
     public List<Entry> _entries = new();
+    public string _fileName = "";
 
     public void Save() //Done i think!
     {
@@ -24,6 +25,7 @@ public class Journal
 
         string[] lines = System.IO.File.ReadAllLines(filenames);
         // entries.Clear();
+        _entries = [];
         foreach (string line in lines)
         {
             string[] parts = line.Split("|");

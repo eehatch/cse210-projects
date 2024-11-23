@@ -19,4 +19,15 @@ public class SimpleGoals : Goals
         _isComplete = false;
         return ""; //incorrect
     }
+        public override void SetGoal()
+    {
+        Console.Write("What is the name of your goal? ");
+        _goalName = Console.ReadLine();
+        Console.Write("What is a short description of it? ");
+        _goalDescription = Console.ReadLine();
+        Console.Write("What is the amount of points associated with this goal? ");
+        _goalPoints = Convert.ToInt32(Console.ReadLine());
+
+        
+    }
 }
